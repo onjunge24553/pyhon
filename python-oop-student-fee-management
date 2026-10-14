@@ -1,0 +1,38 @@
+from abc import ABC,abstractmethod
+class student(ABC):
+  def __init__(self,name,registration_number):
+    self.name=name
+    self.registration_number=registration_number
+  @abstractmethod
+  def calculate_fees(self):
+    pass
+class goverment_sponsered(student):
+  def __init__(self,name,registration_number):
+    super().__init__(name,registration_number)
+  def calculate_fees(self):
+    print("\nname: ",self.name,"\n")
+    print("registration number: ",self.registration_number,"\n")
+    print("Goverment sponsered fees: ksh 16000")
+class self_sponsered(student):
+  def __init__(self,name,registration_number):
+    super().__init__(name,registration_number)
+  def calculate_fees(self):
+    print("\nname: ",self.name,"\n")
+    print("registration number: ",self.registration_number,"\n")
+    print("self sponsered fees: ksh 45,000")
+class international_student(student):
+  def __init__(self,name,registration_number):
+    super().__init__(name,registration_number)
+  def calculate_fees(self):
+    print("\nname: ",self.name,"\n")
+    print("registration number: ",self.registration_number,"\n")
+    print("international student fees: ksh 120,000")
+s1=goverment_sponsered("kevin","CS001")
+s2=self_sponsered("Brian","CS002")
+s3=international_student("Alex","CS003")
+mastude=[s1,s2,s3]
+for k in mastude:
+  k.calculate_fees()
+
+    
+    
